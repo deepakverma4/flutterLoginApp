@@ -45,7 +45,6 @@ class _LoginPageState extends State<LoginPage> with SingleTickerProviderStateMix
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      backgroundColor: Colors.greenAccent,
       body: new Stack(
         fit: StackFit.expand,
         children: <Widget>[
@@ -61,6 +60,41 @@ class _LoginPageState extends State<LoginPage> with SingleTickerProviderStateMix
              new FlutterLogo(
                size: _iconAnimation.value * 140.0,
                     ),
+              new Container(
+                 padding: const EdgeInsets.all(40.0),
+                 child: new Form(
+                   autovalidate: true,
+                   child:  new Column(
+                     mainAxisAlignment: MainAxisAlignment.center,
+                     children: <Widget>[
+                       new TextFormField(
+                         decoration: new InputDecoration(
+                           labelText: "Enter Email",
+                           fillColor: Colors.white
+                         ),
+                         keyboardType: TextInputType.emailAddress,
+                       ),
+                       new TextFormField(
+                         decoration: new InputDecoration(
+                           labelText: "Password",
+                           fillColor: Colors.white
+                         ),
+                         keyboardType: TextInputType.text,
+                       ),
+                       new Padding(
+                         padding: const EdgeInsets.only(top: 40.0),
+                       ),
+                       new MaterialButton(
+                         color: Colors.teal,
+                         textColor: Colors.white,
+                         splashColor: Colors.green,
+                         onPressed: () {},
+                         child: new Text("Login"),
+                       )
+                     ],
+                   ),
+                 )
+              )
              
            ],
          )
